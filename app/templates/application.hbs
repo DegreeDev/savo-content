@@ -1,0 +1,11 @@
+<div class='container'>
+  <h2 id="title">Savo Content Pro</h2>
+  {{#if isAuth}}
+    <button {{action 'logout'}}>Logout </button>
+  {{/if}}
+  <ul class="nav nav-pills">
+    {{#link-to 'profile' tagName='li'}}<a href='#'>Me</a>{{/link-to}}
+    {{#link-to 'assets' tagName='li'}}<a href='#'>Assets</a>{{/link-to}}
+  </ul>
+  {{outlet}}
+</div>

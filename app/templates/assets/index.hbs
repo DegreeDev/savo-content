@@ -1,0 +1,12 @@
+<table class='table table-striped'>
+	<tbody>
+	{{#each sortedAssets as |asset|}}
+	<tr>
+		<td>{{asset.Title}}</td>
+		<td>{{asset.DocType}}</td>
+		<td>{{#link-to 'assets.asset' asset.Id}}Details{{/link-to}}</td>
+	</tr>
+	{{/each}}
+</tbody>
+</table>
+Total: {{model.totalResults}}

@@ -1,0 +1,9 @@
+<div class="row">
+  {{#each mappedSlides as |slide|}}
+  <div class="col-xs-6 col-md-6">
+    <a class='thumbnail'>
+      {{asset/image-preview full=slide.full preview=slide.preview group='previews'}}
+    </a>
+  </div>
+  {{/each}}
+</div>

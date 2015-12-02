@@ -1,0 +1,6 @@
+{{comments/savo-add-comment comment=(action 'comment')}}
+{{#each comments as |comment|}}
+  {{comments/savo-comment body=comment.Body owner=comment.Creator.DisplayName modified=comment.ModifiedDate}}
+{{else}}
+    Nobody has commented...
+{{/each}}

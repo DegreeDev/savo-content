@@ -1,0 +1,7 @@
+{{#if preview}}
+  {{#light-box href=full data-lightbox=group data-title=title inlineImage=false}}
+    <img src='{{preview}}' />
+  {{/light-box}}
+{{else}}
+  {{light-box href=full data-lightbox=group data-title=title}}
+{{/if}}

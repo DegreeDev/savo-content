@@ -1,0 +1,33 @@
+{{#link-to 'assets'}}Back to Assets{{/link-to}}
+
+<h1>{{model.asset.Title}}</h1>
+owned by {{model.asset.Owner.DisplayName}} in {{model.asset.Library.Name}}
+
+<div class='row'>
+	<div class='col-md-9'>
+		<div class="row">
+		  <div class="col-md-12">
+		    <div class="thumbnail">
+					{{asset/image-preview full=preview preview=preview group=model.asset.Title title=model.asset.Title}}
+		      <div class="caption">
+		        <p>{{model.asset.Description}}</p>
+		        <p>
+							<a href='{{download}}' class='btn btn-primary'>Download</a>
+							<a href='{{model.asset.UrlToView}}' class='btn'>View</a>
+						</p>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		{{#if hasSlidePreview}}
+			<h2>Preview</h2>
+			{{asset/preview/savo-slides slides=model.asset.Previews document=model.asset.Id}}
+		{{/if}}
+	</div>
+	<div class='col-md-3'>
+		{{#if canViewComments}}
+			{{comments/savo-comments-display id=model.asset.Id comments=model.comments comment=(action 'addComment') }}
+		{{/if}}
+		{{custom-fields/savo-custom-field-display fields=model.asset.CustomFields showEmptyFields=false}}
+	</div>
+</div>

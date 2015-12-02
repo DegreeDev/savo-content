@@ -1,0 +1,7 @@
+{{#if fieldsToShow}}
+  <h2>Fields</h2>
+  {{#each fieldsToShow as |field|}}
+    <label>{{field.Name}}</label>
+    <div>{{field.Value}}</div>
+  {{/each}}
+{{/if}}
